@@ -12,8 +12,14 @@ InboxSDK.load('1', 'sdk_app_check_ebe9d01b93').then(function(sdk){
 				var temp=event.composeView.getHTMLContent();
 				//var obj=new encryption(temp);
 				//Put encrpted message to compose box.
-				event.composeView.setBodyText(encrypt(temp));
-				//window.alert(encrypted);			
+				
+				var encObj = new RSAKey();
+				var enc = "Encrypting with RSA : ";
+				var msg = RSAKey.encrypt(temp);
+				
+				//window.alert(temp);
+				event.composeView.setBodyText(msg1);
+							
 			},
 		});
 
